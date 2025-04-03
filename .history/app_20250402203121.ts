@@ -7,7 +7,7 @@ function add(a: number, b: number) {
 }
 
 const result = add(5, 3);
-
+git 
 console.log(result);
 
 let results: { res: number, print: () => void }[] = []; //assigning type to array { res: number }[] 

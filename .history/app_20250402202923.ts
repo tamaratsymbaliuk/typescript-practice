@@ -10,7 +10,7 @@ const result = add(5, 3);
 
 console.log(result);
 
-let results: { res: number, print: () => void }[] = []; //assigning type to array { res: number }[] 
+let results: { res: number, print: }[] = []; //assigning type to array { res: number }[] 
 
 buttonElement.addEventListener('click', () => {
   const num1 = +num1Input.value;
