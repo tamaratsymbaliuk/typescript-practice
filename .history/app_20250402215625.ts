@@ -73,4 +73,4 @@ function logAndEcho<T>(val: T) {
 
 logAndEcho<string>('Hi there!').split(' ');
 
-// tsc to compile 
+// tsc to comp

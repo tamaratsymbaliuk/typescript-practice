@@ -27,7 +27,7 @@ class Admin extends User {
 
 const num1Input = document.getElementById('num1') as HTMLInputElement;
 const num2Input = <HTMLInputElement>document.getElementById('num2');
-const buttonElement = document.querySelector('button')!; // ! means it will never be null
+const buttonElement = document.querySelector('button');
 
 function add(a: number, b: number) {
   return a + b;
@@ -72,5 +72,3 @@ function logAndEcho<T>(val: T) {
 }
 
 logAndEcho<string>('Hi there!').split(' ');
-
-// tsc to compile 

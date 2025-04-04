@@ -2,20 +2,13 @@ interface Greetable {
   name: string;
 }
 
-interface Printable {
-  print(): void;
-}
-
-class User implements Greetable, Printable {
+class User imp{
   // name: string;
   // private age: number;
 
   constructor(public name: string, private age: number) {
     // this.name = name;
     // this.age = age;
-  }
-  print(): void {
-    console.log(this.name);
   }
 }
 
@@ -27,7 +20,7 @@ class Admin extends User {
 
 const num1Input = document.getElementById('num1') as HTMLInputElement;
 const num2Input = <HTMLInputElement>document.getElementById('num2');
-const buttonElement = document.querySelector('button')!; // ! means it will never be null
+const buttonElement = document.querySelector('button');
 
 function add(a: number, b: number) {
   return a + b;
@@ -46,8 +39,6 @@ interface CalculationContainer {
 type CalculationResults = CalculationContainer[];
 enum OutputMode { CONSOLE, ALERT };
 
-
-
 const results: CalculationResults = []; //assigning type to array { res: number }[] 
 
 buttonElement.addEventListener('click', () => {
@@ -64,13 +55,3 @@ buttonElement.addEventListener('click', () => {
   results.push(resultContainer);
 
 });
-
-// exmaple of generic functon where whatever type you call will give you that type (T)
-function logAndEcho<T>(val: T) {
-  console.log(val);
-  return val;
-}
-
-logAndEcho<string>('Hi there!').split(' ');
-
-// tsc to compile 

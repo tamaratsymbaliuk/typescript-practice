@@ -1,12 +1,4 @@
-interface Greetable {
-  name: string;
-}
-
-interface Printable {
-  print(): void;
-}
-
-class User implements Greetable, Printable {
+class User {
   // name: string;
   // private age: number;
 
@@ -14,20 +6,13 @@ class User implements Greetable, Printable {
     // this.name = name;
     // this.age = age;
   }
-  print(): void {
-    console.log(this.name);
-  }
 }
 
-class Admin extends User {
-  constructor(name: string, age: number, private permissions: string[]) {
-    super(name, age);
-  }
-}
+class Admin extends User
 
 const num1Input = document.getElementById('num1') as HTMLInputElement;
 const num2Input = <HTMLInputElement>document.getElementById('num2');
-const buttonElement = document.querySelector('button')!; // ! means it will never be null
+const buttonElement = document.querySelector('button');
 
 function add(a: number, b: number) {
   return a + b;
@@ -37,16 +22,8 @@ const result = add(5, 3);
 
 console.log(result);
 
-interface CalculationContainer {
-  res: number;
-  print(): void;
-}
-
-//type CalculationResults = { res: number, print: () => void }[];
-type CalculationResults = CalculationContainer[];
+type CalculationResults = { res: number, print: () => void }[];
 enum OutputMode { CONSOLE, ALERT };
-
-
 
 const results: CalculationResults = []; //assigning type to array { res: number }[] 
 
@@ -64,13 +41,3 @@ buttonElement.addEventListener('click', () => {
   results.push(resultContainer);
 
 });
-
-// exmaple of generic functon where whatever type you call will give you that type (T)
-function logAndEcho<T>(val: T) {
-  console.log(val);
-  return val;
-}
-
-logAndEcho<string>('Hi there!').split(' ');
-
-// tsc to compile 
